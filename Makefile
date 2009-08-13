@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	bugzilla
-DISTVERSION=	3.4
+DISTVERSION=	3.4.1
 CATEGORIES=	japanese
 MASTER_SITES=	ftp://ftp.mozilla.gr.jp/Bugzilla-ja/3.4/ \
 		${MASTER_SITE_LOCAL}
@@ -35,9 +35,8 @@ PLIST_SUB+=	BUGZILLADIR=${BUGZILLADIR:S!^${PREFIX}/!!}
 NO_BUILD=	yes
 
 do-install:
-	-${MKDIR} ${BUGZILLADIR}/template/ja
-	${CP} -pR ${WRKDIR}/default ${BUGZILLADIR}/template/ja/
-	${CP} -pR ${WRKDIR}/extension ${BUGZILLADIR}/template/ja/
+	-${MKDIR} ${BUGZILLADIR}/template
+	${CP} -pR ${WRKDIR}/ja ${BUGZILLADIR}/template/
 .if !defined(BATCH)
 	@${ECHO_MSG}
 	@${CAT} ${PKGMESSAGE}
