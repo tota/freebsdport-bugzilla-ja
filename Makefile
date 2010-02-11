@@ -1,14 +1,14 @@
 # New ports collection makefile for:	bugzilla-ja
-# Date created:		2009-08-03
+# Date created:		2010-02-11
 # Whom:			TAKATSU Tomonari <tota@FreeBSD.org>
 #
 # $FreeBSD$
 #
 
 PORTNAME=	bugzilla
-DISTVERSION=	3.4.1
+DISTVERSION=	3.4.5
 CATEGORIES=	japanese
-MASTER_SITES=	ftp://ftp.mozilla.gr.jp/Bugzilla-ja/3.4/ \
+MASTER_SITES=	http://bug-ja.org/releases/3.4/ \
 		${MASTER_SITE_LOCAL}
 PKGNAMESUFFIX=	-ja
 DISTNAME=	Bugzilla-ja-${DISTVERSION}-template-rel01
@@ -16,11 +16,13 @@ DISTNAME=	Bugzilla-ja-${DISTVERSION}-template-rel01
 MAINTAINER=	tota@FreeBSD.org
 COMMENT=	Japanese localization for Bugzilla
 
-RUN_DEPENDS=	bugzilla>=3.4:${PORTSDIR}/devel/bugzilla
+RUN_DEPENDS=	bugzilla>=3.4.5:${PORTSDIR}/devel/bugzilla
 
 USE_BZIP2=	yes
 
 CONFLICTS=	bugzilla-2.*
+
+PORTSCOUT=	limitw:1,even
 
 .if !defined(BUGZILLADIR)
 .if defined(APACHE_DATADIR)

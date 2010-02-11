@@ -21,7 +21,6 @@
 %%BUGZILLADIR%%/template/ja/default/admin/classifications/add.html.tmpl
 %%BUGZILLADIR%%/template/ja/default/admin/classifications/del.html.tmpl
 %%BUGZILLADIR%%/template/ja/default/admin/classifications/edit.html.tmpl
-%%BUGZILLADIR%%/template/ja/default/admin/classifications/footer.html.tmpl
 %%BUGZILLADIR%%/template/ja/default/admin/classifications/reclassify.html.tmpl
 %%BUGZILLADIR%%/template/ja/default/admin/classifications/select.html.tmpl
 %%BUGZILLADIR%%/template/ja/default/admin/components/confirm-delete.html.tmpl
