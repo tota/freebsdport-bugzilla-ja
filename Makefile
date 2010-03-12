@@ -1,22 +1,22 @@
-# New ports collection makefile for:	bugzilla-ja
-# Date created:		2010-02-11
-# Whom:			TAKATSU Tomonari <tota@FreeBSD.org>
+# New ports collection makefile for:	ja-bugzilla
+# Date created:		2004-01-19
+# Whom:			TAKATSU Tomonari <tota@rtfm.jp>
 #
-# $FreeBSD$
+# $FreeBSD: ports/japanese/bugzilla/Makefile,v 1.8 2010/02/05 11:39:46 dinoex Exp $
 #
 
 PORTNAME=	bugzilla
-DISTVERSION=	3.4.5
+PORTVERSION=	3.4.6
 CATEGORIES=	japanese
 MASTER_SITES=	http://bug-ja.org/releases/3.4/ \
-		${MASTER_SITE_LOCAL}
+		${MASTER_SITE_LOCAL:S|%SUBDIR%|tota/bugzilla-ja|}
 PKGNAMESUFFIX=	-ja
-DISTNAME=	Bugzilla-ja-${DISTVERSION}-template-rel01
+DISTNAME=	Bugzilla-ja-${PORTVERSION}-template-rel01
 
 MAINTAINER=	tota@FreeBSD.org
 COMMENT=	Japanese localization for Bugzilla
 
-RUN_DEPENDS=	bugzilla>=3.4.5:${PORTSDIR}/devel/bugzilla
+RUN_DEPENDS=	bugzilla>=${PORTVERSION}:${PORTSDIR}/devel/bugzilla
 
 USE_BZIP2=	yes
 
@@ -38,7 +38,7 @@ NO_BUILD=	yes
 
 do-install:
 	-${MKDIR} ${BUGZILLADIR}/template
-	${CP} -pR ${WRKDIR}/ja ${BUGZILLADIR}/template/
+	${CP} -pR ${WRKDIR}/ja-${PORTVERSION} ${BUGZILLADIR}/template/ja
 .if !defined(BATCH)
 	@${ECHO_MSG}
 	@${CAT} ${PKGMESSAGE}
