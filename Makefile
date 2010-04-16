@@ -38,7 +38,7 @@ NO_BUILD=	yes
 
 do-install:
 	-${MKDIR} ${BUGZILLADIR}/template
-	${CP} -pR ${WRKDIR}/ja ${BUGZILLADIR}/template/ja
+	${CP} -pR ${WRKDIR}/ja ${BUGZILLADIR}/template
 .if !defined(BATCH)
 	@${ECHO_MSG}
 	@${CAT} ${PKGMESSAGE}
