@@ -2,12 +2,12 @@
 # Date created:		2004-01-19
 # Whom:			TAKATSU Tomonari <tota@rtfm.jp>
 #
-# $FreeBSD: ports/japanese/bugzilla/Makefile,v 1.13 2010/04/23 11:47:13 tota Exp $
+# $FreeBSD: ports/japanese/bugzilla/Makefile,v 1.14 2010/04/24 13:38:30 tota Exp $
 #
 
 PORTNAME=	bugzilla
 PORTVERSION=	3.6
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	japanese
 MASTER_SITES=	http://bug-ja.org/releases/3.6/ \
 		${MASTER_SITE_LOCAL:S|%SUBDIR%|tota/bugzilla-ja|}
