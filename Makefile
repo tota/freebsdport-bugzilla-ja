@@ -2,17 +2,16 @@
 # Date created:		2004-01-19
 # Whom:			TAKATSU Tomonari <tota@rtfm.jp>
 #
-# $FreeBSD: ports/japanese/bugzilla/Makefile,v 1.14 2010/04/24 13:38:30 tota Exp $
+# $FreeBSD: ports/japanese/bugzilla/Makefile,v 1.15 2010/07/06 13:38:28 tota Exp $
 #
 
 PORTNAME=	bugzilla
-PORTVERSION=	3.6
-PORTREVISION=	3
+PORTVERSION=	3.6.2
 CATEGORIES=	japanese
 MASTER_SITES=	http://bug-ja.org/releases/3.6/ \
 		${MASTER_SITE_LOCAL:S|%SUBDIR%|tota/bugzilla-ja|}
 PKGNAMESUFFIX=	-ja
-DISTNAME=	Bugzilla-ja-${PORTVERSION}-template-rel02
+DISTNAME=	Bugzilla-ja-${PORTVERSION}-template-rel01
 
 MAINTAINER=	tota@FreeBSD.org
 COMMENT=	Japanese localization for Bugzilla
@@ -36,10 +35,11 @@ BUGZILLADIR=	${PREFIX}/www/data/bugzilla
 PLIST_SUB+=	BUGZILLADIR=${BUGZILLADIR:S!^${PREFIX}/!!}
 
 NO_BUILD=	yes
+TEMPLATEDIR=	${BUGZILLADIR}/template/ja
 
 do-install:
-	-${MKDIR} ${BUGZILLADIR}/template
-	${CP} -pR ${WRKDIR}/ja ${BUGZILLADIR}/template
+	-${MKDIR} ${TEMPLATEDIR}
+	cd ${WRKDIR}/ja-${PORTVERSION}; ${COPYTREE_SHARE} . ${TEMPLATEDIR}
 .if !defined(BATCH)
 	@${ECHO_MSG}
 	@${CAT} ${PKGMESSAGE}
